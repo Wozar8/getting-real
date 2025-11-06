@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace getting_real
+{
+    internal class Battery
+    {
+        public string RegisterDate { get; set; }
+        public string BatteryType { get; set; }
+        public Double MaxCapacity { get; set; }
+        public string MountingType { get; set; }
+    }
+}
