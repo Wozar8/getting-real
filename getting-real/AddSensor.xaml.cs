@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace getting_real
 {
     /// <summary>
-    /// Interaction logic for SensorView.xaml
+    /// Interaction logic for AddSensor.xaml
     /// </summary>
-    public partial class SensorView : Window
+    public partial class AddSensor : Window
     {
-        public SensorView()
+        public AddSensor()
         {
             InitializeComponent();
         }
