@@ -10,7 +10,7 @@ namespace getting_real
     {
         public string RegisterDate { get; set; }
         public string BatteryType { get; set; }
-        public Double MaxCapacity { get; set; }
+        public double MaxCapacity { get; set; }
         public string MountingType { get; set; }
     }
 }
