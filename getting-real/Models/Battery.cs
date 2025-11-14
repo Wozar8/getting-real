@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace getting_real
 {
-    internal class Battery
+    class Battery
     {
         public string RegisterDate { get; set; }
         public string BatteryType { get; set; }

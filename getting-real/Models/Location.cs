@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace getting_real
 {
-    internal class Location
+    class Location
     {
         public string City { get; set; }
         public int PostalCode { get; set; }

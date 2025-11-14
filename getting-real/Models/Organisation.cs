@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace getting_real
 {
-    internal class Organisation
+    class Organisation
     {
         public int Id { get; set; }
         public int NumberOfSensors { get; set; }
