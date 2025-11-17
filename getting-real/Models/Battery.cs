@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace getting_real
 {
-    internal class Battery
+    class Battery
     {
-        public string RegisterDate { get; set; }
+        public DateTime RegistrationDate { get; set; }
         public string BatteryType { get; set; }
         public double MaxCapacity { get; set; }
         public string MountingType { get; set; }
