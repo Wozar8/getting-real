@@ -2,11 +2,13 @@
 using System.Data;
 using System.Windows;
 
-namespace getting_real;
-
 /// <summary>
 /// Interaction logic for App.xaml
 /// </summary>
-public partial class App : Application
+
+namespace getting_real.View
 {
+    public partial class App : Application
+    {
+    }
 }

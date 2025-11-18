@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace getting_real
+namespace getting_real.View
 {
     /// <summary>
     /// Interaction logic for AddSensor.xaml

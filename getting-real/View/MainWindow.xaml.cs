@@ -9,22 +9,24 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace getting_real;
 
 /// <summary>
 /// Interaction logic for MainWindow.xaml
 /// </summary>
-public partial class MainWindow : Window
+namespace getting_real.View
 {
-    public MainWindow()
+    public partial class MainWindow : Window
     {
-        InitializeComponent();
-    }
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
 
-    private void Button_Click(object sender, RoutedEventArgs e)
-    {
-        SensorView sensorView = new SensorView();
-        sensorView.Show();
-        this.Close();
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            SensorView sensorView = new SensorView();
+            sensorView.Show();
+            this.Close();
+        }
     }
 }
