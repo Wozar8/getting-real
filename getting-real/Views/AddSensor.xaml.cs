@@ -1,13 +1,13 @@
 ﻿using System.Windows;
 
-namespace getting_real.View;
+namespace getting_real.Views;
 
 /// <summary>
-///     Interaction logic for SensorView.xaml
+///     Interaction logic for AddSensor.xaml
 /// </summary>
-public partial class SensorView : Window
+public partial class AddSensor : Window
 {
-    public SensorView()
+    public AddSensor()
     {
         InitializeComponent();
     }

@@ -4,8 +4,8 @@
 /// Interaction logic for App.xaml
 /// </summary>
 
-namespace getting_real.View;
+namespace getting_real.Views;
 
-public class App : Application
+public partial class App : Application
 {
 }

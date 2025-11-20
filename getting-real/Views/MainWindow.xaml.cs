@@ -4,7 +4,7 @@
 /// <summary>
 /// Interaction logic for MainWindow.xaml
 /// </summary>
-namespace getting_real.View;
+namespace getting_real.Views;
 
 public partial class MainWindow : Window
 {
