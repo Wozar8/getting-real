@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace getting_real;
 
-namespace getting_real
+internal class Organisation
 {
-    class Organisation
-    {
-        public int Id { get; set; }
-        public int NumberOfSensors { get; set; }
-        public string Name { get; set; }
-    }
+    public int Id { get; set; }
+    public int NumberOfSensors { get; set; }
+    public string Name { get; set; }
 }

@@ -10,7 +10,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ApplicationDefinition Include="View\App.xaml" />
+        <ApplicationDefinition Include="View\App.xaml"/>
     </ItemGroup>
 
 </Project>

@@ -1,14 +1,11 @@
-﻿using System.Configuration;
-using System.Data;
-using System.Windows;
+﻿using System.Windows;
 
 /// <summary>
 /// Interaction logic for App.xaml
 /// </summary>
 
-namespace getting_real.View
+namespace getting_real.View;
+
+public class App : Application
 {
-    public partial class App : Application
-    {
-    }
 }
