@@ -6,6 +6,6 @@
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,38,0,0" />
+        <DataGrid ItemsSource="{Binding Sensors}" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,38,0,0" />
     </Grid>
 </UserControl>
