@@ -5,15 +5,20 @@ namespace getting_real_4.ViewModels;
 public class SensorViewModel
 {
     private readonly Sensor _senor;
-    
-    public string Id => _senor.Id.ToString();
-    public string Type => _senor.Type;
-    public string Keys => _senor.Keys;
-    public string SensorType => _senor.SensorType;
-    public string ConnectionType => _senor.ConnectionType;
+
+    public string Id { get; set; }
+    public string Type { get; set; }
+    public string Keys { get; set; }
+    public string SensorType { get; set; }
+    public string ConnectionType { get; set; }
 
     public SensorViewModel(Sensor sensor)
     {
         _senor = sensor;
-    } 
+        this.Id = _senor.Id.ToString();
+        this.Type = _senor.Type;
+        this.Keys = _senor.Keys;
+        this.SensorType = _senor.SensorType;
+        this.ConnectionType = _senor.ConnectionType;
+    }
 }
