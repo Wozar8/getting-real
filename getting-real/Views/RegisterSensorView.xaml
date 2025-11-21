@@ -13,19 +13,19 @@
                 RenderTransformOrigin="1.174,0.301" />
         <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" Text="Tilføj sensor"
                    VerticalAlignment="Top" />
-        <TextBox HorizontalAlignment="Left" Margin="10,92,0,0" TextWrapping="Wrap" Text=""
+        <TextBox HorizontalAlignment="Left" Margin="10,92,0,0" TextWrapping="Wrap" Text="{Binding Type}"
                  VerticalAlignment="Top" Width="120" />
-        <TextBox HorizontalAlignment="Left" Margin="170,92,0,0" TextWrapping="Wrap" Text=""
+        <TextBox HorizontalAlignment="Left" Margin="170,92,0,0" TextWrapping="Wrap" Text="{Binding Keys}"
                  VerticalAlignment="Top" Width="120" />
         <TextBlock HorizontalAlignment="Left" Margin="10,71,0,0" TextWrapping="Wrap" Text="Type"
                    VerticalAlignment="Top" />
         <TextBlock HorizontalAlignment="Left" Margin="170,71,0,0" TextWrapping="Wrap" Text="Nøgler"
                    VerticalAlignment="Top" />
-        <TextBox HorizontalAlignment="Left" Margin="10,171,0,0" TextWrapping="Wrap" Text=""
+        <TextBox HorizontalAlignment="Left" Margin="10,171,0,0" TextWrapping="Wrap" Text="{Binding SensorType}"
                  VerticalAlignment="Top" Width="120" />
         <TextBlock HorizontalAlignment="Left" Margin="10,150,0,0" TextWrapping="Wrap" Text="Sensor type"
                    VerticalAlignment="Top" />
-        <TextBox HorizontalAlignment="Left" Margin="170,171,0,0" TextWrapping="Wrap" Text=""
+        <TextBox HorizontalAlignment="Left" Margin="170,171,0,0" TextWrapping="Wrap" Text="{Binding  ConnectionType}"
                  VerticalAlignment="Top" Width="120" />
         <TextBlock HorizontalAlignment="Left" Margin="170,150,0,0" TextWrapping="Wrap" Text="Forbindelsestype"
                    VerticalAlignment="Top" />
