@@ -12,6 +12,8 @@ public class SensorViewModel
     public string SensorType { get; set; }
     public string ConnectionType { get; set; }
 
+    public ICommand AddSensorCommand { get; }
+
     public SensorViewModel(Sensor sensor)
     {
         _senor = sensor;
