@@ -6,7 +6,7 @@ public class SensorViewModel
 {
     private readonly Sensor _senor;
 
-    public string Id { get; set; }
+    public string Id { get; set; } // TODO: Add OnPropertyChange for all properties
     public string Type { get; set; }
     public string Keys { get; set; }
     public string SensorType { get; set; }
