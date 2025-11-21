@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Windows.Input;
 using getting_real_4.Models;
 
 namespace getting_real_4.ViewModels;
@@ -7,6 +8,8 @@ public class SensorListingViewModel : ViewModelBase
 {
     private readonly ObservableCollection<SensorViewModel> _sensors;
     public ObservableCollection<SensorViewModel> Sensors => _sensors;
+
+    public ICommand AddSensorCommand { get; }
 
     public SensorListingViewModel()
     {
