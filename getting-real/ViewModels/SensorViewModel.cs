@@ -6,6 +6,16 @@ public class SensorViewModel
 {
     private readonly Sensor _senor;
 
+    public SensorViewModel(Sensor sensor)
+    {
+        _senor = sensor;
+        Id = _senor.Id.ToString();
+        Type = _senor.Type;
+        Keys = _senor.Keys;
+        SensorType = _senor.SensorType;
+        ConnectionType = _senor.ConnectionType;
+    }
+
     public string Id { get; set; } // TODO: Add OnPropertyChange for all properties
     public string Type { get; set; }
     public string Keys { get; set; }
