@@ -1,3 +1,5 @@
+using System.Windows.Input;
+
 namespace getting_real_4.ViewModels;
 
 public class RegisterSensorViewModel : ViewModelBase
@@ -30,4 +32,7 @@ public class RegisterSensorViewModel : ViewModelBase
         get => _type;
         set => OnPropertyChanged(Type);
     }
+
+    public ICommand AddCommand { get; }
+    public ICommand CancelCommand { get; }
 }
