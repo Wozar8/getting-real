@@ -5,34 +5,58 @@ namespace getting_real_4.ViewModels;
 public class RegisterSensorViewModel : ViewModelBase
 {
     private string _sensorType;
-    private string _connectionType;
-    private string _keys;
-    private string _type;
 
     public string SensorType
     {
         get => _sensorType;
-        set => OnPropertyChanged(SensorType);
+        set
+        {
+            _sensorType = value;
+            OnPropertyChanged(nameof(SensorType));
+        }
     }
+
+    private string _connectionType;
 
     public string ConnectionType
     {
         get => _connectionType;
-        set => OnPropertyChanged(ConnectionType);
+        set
+        {
+            _connectionType = value;
+            OnPropertyChanged(nameof(ConnectionType));
+        }
     }
+
+    private string _keys;
 
     public string Keys
     {
         get => _keys;
-        set => OnPropertyChanged(Keys);
+        set
+        {
+            _keys = value;
+            OnPropertyChanged(nameof(Keys));
+        }
     }
+
+    private string _type;
 
     public string Type
     {
         get => _type;
-        set => OnPropertyChanged(Type);
+        set
+        {
+            _type = value;
+            OnPropertyChanged(nameof(Type));
+        }
     }
+
 
     public ICommand AddCommand { get; }
     public ICommand CancelCommand { get; }
+
+    public RegisterSensorViewModel()
+    {
+    }
 }

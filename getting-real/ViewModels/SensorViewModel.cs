@@ -2,7 +2,7 @@
 
 namespace getting_real_4.ViewModels;
 
-public class SensorViewModel
+public class SensorViewModel : ViewModelBase
 {
     private readonly Sensor _senor;
 
@@ -16,7 +16,7 @@ public class SensorViewModel
         ConnectionType = _senor.ConnectionType;
     }
 
-    public string Id { get; set; } // TODO: Add OnPropertyChange for all properties
+    public string Id { get; set; }
     public string Type { get; set; }
     public string Keys { get; set; }
     public string SensorType { get; set; }
