@@ -59,5 +59,6 @@ public class RegisterSensorViewModel : ViewModelBase
 
     public RegisterSensorViewModel()
     {
+        AddCommand = new RegisterSensorCommand();
     }
 }
