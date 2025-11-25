@@ -2,6 +2,7 @@
 
 namespace getting_real_4.ViewModels;
 
+// This is a helper file for the SensorListingViewModel
 public class SensorViewModel : ViewModelBase
 {
     private readonly Sensor _senor;

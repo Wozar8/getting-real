@@ -1,5 +1,6 @@
 using System.Windows.Input;
 using getting_real_4.Commands;
+using getting_real_4.Models.Repositories;
 
 namespace getting_real_4.ViewModels;
 
@@ -57,8 +58,8 @@ public class RegisterSensorViewModel : ViewModelBase
     public ICommand AddCommand { get; }
     public ICommand CancelCommand { get; }
 
-    public RegisterSensorViewModel()
+    public RegisterSensorViewModel(SensorRepository repository)
     {
-        AddCommand = new RegisterSensorCommand();
+        AddCommand = new RegisterSensorCommand(repository, this);
     }
 }
