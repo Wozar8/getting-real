@@ -1,13 +1,11 @@
-﻿using System.Configuration;
-using System.Data;
-using System.Windows;
+﻿using System.Windows;
 using getting_real_4.Models.Repositories;
 using getting_real_4.ViewModels;
 
 namespace getting_real_4;
 
 /// <summary>
-/// Interaction logic for App.xaml
+///     Interaction logic for App.xaml
 /// </summary>
 public partial class App : Application
 {
@@ -20,7 +18,7 @@ public partial class App : Application
 
     protected override void OnStartup(StartupEventArgs e)
     {
-        MainWindow = new MainWindow()
+        MainWindow = new MainWindow
         {
             DataContext = new MainViewModel(_repository)
         };

@@ -6,8 +6,8 @@ namespace getting_real_4.Commands;
 
 public class RegisterSensorCommand : CommandBase
 {
-    private readonly SensorRepository _repository;
     private readonly RegisterSensorViewModel _registerSensorViewModel;
+    private readonly SensorRepository _repository;
 
     public RegisterSensorCommand(SensorRepository repository, RegisterSensorViewModel registerSensorViewModel)
     {
@@ -17,7 +17,7 @@ public class RegisterSensorCommand : CommandBase
 
     public override void Execute(object? parameter)
     {
-        Sensor sensor = new Sensor(_registerSensorViewModel.Type, _registerSensorViewModel.Keys,
+        var sensor = new Sensor(_registerSensorViewModel.Type, _registerSensorViewModel.Keys,
             _registerSensorViewModel.SensorType, _registerSensorViewModel.ConnectionType);
         _repository.AddSensor(sensor);
     }

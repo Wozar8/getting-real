@@ -6,7 +6,17 @@ namespace getting_real_4.ViewModels;
 
 public class RegisterSensorViewModel : ViewModelBase
 {
+    private string _connectionType;
+
+    private string _keys;
     private string _sensorType;
+
+    private string _type;
+
+    public RegisterSensorViewModel(SensorRepository repository)
+    {
+        AddCommand = new RegisterSensorCommand(repository, this);
+    }
 
     public string SensorType
     {
@@ -18,8 +28,6 @@ public class RegisterSensorViewModel : ViewModelBase
         }
     }
 
-    private string _connectionType;
-
     public string ConnectionType
     {
         get => _connectionType;
@@ -30,8 +38,6 @@ public class RegisterSensorViewModel : ViewModelBase
         }
     }
 
-    private string _keys;
-
     public string Keys
     {
         get => _keys;
@@ -41,8 +47,6 @@ public class RegisterSensorViewModel : ViewModelBase
             OnPropertyChanged(nameof(Keys));
         }
     }
-
-    private string _type;
 
     public string Type
     {
@@ -57,9 +61,4 @@ public class RegisterSensorViewModel : ViewModelBase
 
     public ICommand AddCommand { get; }
     public ICommand CancelCommand { get; }
-
-    public RegisterSensorViewModel(SensorRepository repository)
-    {
-        AddCommand = new RegisterSensorCommand(repository, this);
-    }
 }
