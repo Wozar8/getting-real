@@ -37,5 +37,7 @@ public class RegisterSensorCommand : CommandBase
         var sensor = new Sensor(_registerSensorViewModel.Type, _registerSensorViewModel.Keys,
             _registerSensorViewModel.SensorType, _registerSensorViewModel.ConnectionType);
         _repository.AddSensor(sensor);
+
+        MessageBox.Show("Sensor registered successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
     }
 }
