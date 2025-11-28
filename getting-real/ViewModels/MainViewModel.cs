@@ -1,14 +1,21 @@
-﻿using getting_real_4.Models.Repositories;
+﻿using getting_real_4.Stores;
 
 namespace getting_real_4.ViewModels;
 
 public class MainViewModel : ViewModelBase
 {
-    public MainViewModel(SensorRepository repository)
+    private readonly NavigationStore _navigationStore;
+
+    public ViewModelBase CurrentViewModel => _navigationStore.CurrentViewModel;
+
+    public MainViewModel(NavigationStore navigationStore)
     {
-        CurrentViewModel = new RegisterSensorViewModel(repository);
-        //CurrentViewModel = new SensorListingViewModel();
+        _navigationStore = navigationStore;
+        _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
     }
 
-    public ViewModelBase CurrentViewModel { get; }
+    private void OnCurrentViewModelChanged()
+    {
+        OnPropertyChanged(nameof(CurrentViewModel));
+    }
 }

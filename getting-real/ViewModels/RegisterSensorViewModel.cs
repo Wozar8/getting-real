@@ -1,6 +1,8 @@
 using System.Windows.Input;
 using getting_real_4.Commands;
 using getting_real_4.Models.Repositories;
+using getting_real_4.Services;
+using getting_real_4.Stores;
 
 namespace getting_real_4.ViewModels;
 
@@ -13,9 +15,13 @@ public class RegisterSensorViewModel : ViewModelBase
 
     private string _type;
 
-    public RegisterSensorViewModel(SensorRepository repository)
+    public ICommand AddCommand { get; }
+    public ICommand CancelCommand { get; }
+
+    public RegisterSensorViewModel(SensorRepository repository, NavigationService registerSensorViewNavigationService)
     {
-        AddCommand = new RegisterSensorCommand(repository, this);
+        AddCommand = new RegisterSensorCommand(repository, this, registerSensorViewNavigationService);
+        CancelCommand = new NavigateCommand(registerSensorViewNavigationService);
     }
 
     public string SensorType
@@ -57,8 +63,4 @@ public class RegisterSensorViewModel : ViewModelBase
             OnPropertyChanged(nameof(Type));
         }
     }
-
-
-    public ICommand AddCommand { get; }
-    public ICommand CancelCommand { get; }
 }
