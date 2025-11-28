@@ -9,8 +9,8 @@ namespace getting_real_4.Commands;
 
 public class RegisterSensorCommand : CommandBase
 {
-    private readonly RegisterSensorViewModel _registerSensorViewModel;
     private readonly NavigationService _registerSensorNavigationService;
+    private readonly RegisterSensorViewModel _registerSensorViewModel;
     private readonly SensorRepository _repository;
 
     public RegisterSensorCommand(SensorRepository repository, RegisterSensorViewModel registerSensorViewModel,
@@ -18,16 +18,13 @@ public class RegisterSensorCommand : CommandBase
     {
         _repository = repository;
         _registerSensorViewModel = registerSensorViewModel;
-        this._registerSensorNavigationService = registerSensorNavigationService;
+        _registerSensorNavigationService = registerSensorNavigationService;
         _registerSensorViewModel.PropertyChanged += OnViewModelPropertyChanged;
     }
 
     private void OnViewModelPropertyChanged(object? sender, PropertyChangedEventArgs e)
     {
-        if (e.PropertyName == nameof(RegisterSensorViewModel.Type))
-        {
-            OnCanExecuteChanged();
-        }
+        if (e.PropertyName == nameof(RegisterSensorViewModel.Type)) OnCanExecuteChanged();
     }
 
     public override bool CanExecute(object? parameter)
