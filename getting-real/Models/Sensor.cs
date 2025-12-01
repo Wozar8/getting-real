@@ -2,6 +2,8 @@
 
 public class Sensor
 {
+    public readonly Guid Id;
+
     public Sensor(string type, string keys, string sensorType, string connectionType)
     {
         Id = Guid.NewGuid();
