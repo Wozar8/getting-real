@@ -8,8 +8,8 @@ namespace getting_real_4.Commands;
 
 public class RegisterSensorCommand : CommandBase
 {
-    // After we add a sensor, we call this to go back to the list.
-    private readonly Action _afterAddAction;
+    // After we add a sensor, invoke provided callback to go back to the list.
+    private readonly Action _onAfterAdd;
     private readonly RegisterSensorViewModel _registerSensorViewModel;
     private readonly SensorRepository _repository;
 
@@ -18,7 +18,7 @@ public class RegisterSensorCommand : CommandBase
     {
         _repository = repository;
         _registerSensorViewModel = registerSensorViewModel;
-        _afterAddAction = afterAddAction;
+        _onAfterAdd = afterAddAction;
         // Watch for changes in the Type field to enable/disable the Add button.
         _registerSensorViewModel.PropertyChanged += OnViewModelPropertyChanged;
     }
@@ -42,7 +42,7 @@ public class RegisterSensorCommand : CommandBase
         // Save it using the repository.
         _repository.AddSensor(sensor);
         // Tell the window to go back to the list.
-        _afterAddAction?.Invoke();
+        _onAfterAdd?.Invoke();
 
         // Give simple feedback to the user.
         MessageBox.Show("Sensor registered successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);

@@ -17,15 +17,16 @@ public class SensorListingViewModel : ViewModelBase
     // The button in the list view binds to this and triggers navigation.
     public ICommand AddSensorCommand { get; }
 
-    // Event that tells the window to show the register screen.
-    public event EventHandler? AddSensorRequested;
+    // Simplified navigation: callback to show register screen.
+    private readonly Action _navigateToRegister;
 
-    public SensorListingViewModel(SensorRepository repository)
+    public SensorListingViewModel(SensorRepository repository, Action navigateToRegister)
     {
         _sensors = new ObservableCollection<SensorViewModel>();
         _repository = repository;
+        _navigateToRegister = navigateToRegister;
 
-        // When the add button is clicked, raise an event.
+        // When the add button is clicked, navigate directly.
         AddSensorCommand = new NavigateCommand(OnAddSensor);
 
         // Load sensors to display.
@@ -34,7 +35,7 @@ public class SensorListingViewModel : ViewModelBase
 
     private void OnAddSensor()
     {
-        AddSensorRequested?.Invoke(this, EventArgs.Empty);
+        _navigateToRegister?.Invoke();
     }
 
     private void UpdateRegisteredSensors()

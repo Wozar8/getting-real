@@ -17,26 +17,17 @@ public class RegisterSensorViewModel : ViewModelBase
     public ICommand AddCommand { get; }
     public ICommand CancelCommand { get; }
 
-    // Simple events to tell the window to switch screens.
-    public event EventHandler? CancelRequested;
-    public event EventHandler? AddCompleted;
+    // Simplified navigation: single callback provided by host.
+    private readonly Action _navigateBack;
 
-    public RegisterSensorViewModel(SensorRepository repository)
+    public RegisterSensorViewModel(SensorRepository repository, Action navigateBack)
     {
+        _navigateBack = navigateBack;
+
         // When AddCommand executes, we add the sensor and then go back.
-        AddCommand = new RegisterSensorCommand(repository, this, OnAddCompleted);
+        AddCommand = new RegisterSensorCommand(repository, this, _navigateBack);
         // When CancelCommand executes, just go back without adding.
-        CancelCommand = new NavigateCommand(OnCancelRequested);
-    }
-
-    private void OnCancelRequested()
-    {
-        CancelRequested?.Invoke(this, EventArgs.Empty);
-    }
-
-    private void OnAddCompleted()
-    {
-        AddCompleted?.Invoke(this, EventArgs.Empty);
+        CancelCommand = new NavigateCommand(_navigateBack);
     }
 
     // Each property notifies the UI when it changes so the view updates.
