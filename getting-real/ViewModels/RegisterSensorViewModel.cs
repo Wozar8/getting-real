@@ -31,20 +31,12 @@ public class RegisterSensorViewModel : ViewModelBase
 
     private void OnCancelRequested()
     {
-        var handler = CancelRequested;
-        if (handler != null)
-        {
-            handler(this, EventArgs.Empty);
-        }
+        CancelRequested?.Invoke(this, EventArgs.Empty);
     }
 
     private void OnAddCompleted()
     {
-        var handler = AddCompleted;
-        if (handler != null)
-        {
-            handler(this, EventArgs.Empty);
-        }
+        AddCompleted?.Invoke(this, EventArgs.Empty);
     }
 
     // Each property notifies the UI when it changes so the view updates.
