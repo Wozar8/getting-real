@@ -34,11 +34,8 @@ public class SensorListingViewModel : ViewModelBase
 
     private void OnAddSensor()
     {
-        var handler = AddSensorRequested;
-        if (handler != null)
-        {
-            handler(this, EventArgs.Empty);
-        }
+        // Use concise null-conditional invocation instead of the older local-delegate pattern.
+        AddSensorRequested?.Invoke(this, EventArgs.Empty);
     }
 
     private void UpdateRegisteredSensors()
