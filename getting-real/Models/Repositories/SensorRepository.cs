@@ -1,5 +1,6 @@
 ﻿using getting_real_4.Models.Repositories.Interfaces;
 using System.IO;
+using System.Diagnostics;
 
 namespace getting_real_4.Models.Repositories;
 
@@ -41,44 +42,70 @@ public class SensorRepository : ISensorRepository
 
     public void Load()
     {
-        if (!File.Exists(DataFile))
-            return;
-
-        _sensors.Clear();
-
-        using var reader = new StreamReader(DataFile);
-        while (!reader.EndOfStream)
+        try
         {
-            var line = reader.ReadLine();
-            if (string.IsNullOrWhiteSpace(line))
-                continue;
+            if (!File.Exists(DataFile))
+                return;
 
-            var parts = line.Split(',');
-            if (parts.Length == 7)
+            _sensors.Clear();
+
+            using var reader = new StreamReader(DataFile);
+            while (!reader.EndOfStream)
             {
-                var sensor = new Sensor(
-                    parts[1],  // Type
-                    parts[2],  // Keys
-                    parts[3],  // SensorType
-                    parts[4],  // ConnectionType
-                    bool.Parse(parts[6])  // IsHome
-                )
-                {
-                    Id = Guid.Parse(parts[0]),
-                    BatteryReplacementCount = int.Parse(parts[5])
-                };
+                var line = reader.ReadLine();
+                if (string.IsNullOrWhiteSpace(line))
+                    continue;
 
-                _sensors.Add(sensor);
+                var parts = line.Split(',');
+                if (parts.Length != 7)
+                {
+                    Debug.WriteLine($"Skipping malformed line in {DataFile}: '{line}'");
+                    continue;
+                }
+
+                try
+                {
+                    var sensor = new Sensor(
+                        parts[1],  // Type
+                        parts[2],  // Keys
+                        parts[3],  // SensorType
+                        parts[4],  // ConnectionType
+                        bool.Parse(parts[6])  // IsHome
+                    )
+                    {
+                        Id = Guid.Parse(parts[0]),
+                        BatteryReplacementCount = int.Parse(parts[5])
+                    };
+
+                    _sensors.Add(sensor);
+                }
+                catch (FormatException fx)
+                {
+                    // Skip bad line, but log it for diagnosis
+                    Debug.WriteLine($"Skipping line with parse error in {DataFile}: '{line}' ({fx.Message})");
+                    continue;
+                }
             }
+        }
+        catch (UnauthorizedAccessException uaEx)
+        {
+            throw new IOException($"Access denied reading '{DataFile}'.", uaEx);
         }
     }
 
     public void Save()
     {
-        using var writer = new StreamWriter(DataFile);
-        foreach (var sensor in _sensors)
+        try
         {
-            writer.WriteLine($"{sensor.Id},{sensor.Type},{sensor.Keys},{sensor.SensorType},{sensor.ConnectionType},{sensor.BatteryReplacementCount},{sensor.IsHome}");
+            using var writer = new StreamWriter(DataFile);
+            foreach (var sensor in _sensors)
+            {
+                writer.WriteLine($"{sensor.Id},{sensor.Type},{sensor.Keys},{sensor.SensorType},{sensor.ConnectionType},{sensor.BatteryReplacementCount},{sensor.IsHome}");
+            }
+        }
+        catch (UnauthorizedAccessException uaEx)
+        {
+            throw new IOException($"Access denied writing '{DataFile}'.", uaEx);
         }
     }
 }
