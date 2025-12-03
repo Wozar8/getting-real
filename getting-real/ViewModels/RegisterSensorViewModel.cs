@@ -9,11 +9,10 @@ namespace getting_real_4.ViewModels;
 public class RegisterSensorViewModel : ViewModelBase
 {
     private string _connectionType;
-
     private string _keys;
     private string _sensorType;
-
     private string _type;
+    private bool _isHome;
 
     public ICommand AddCommand { get; }
     public ICommand CancelCommand { get; }
@@ -63,4 +62,14 @@ public class RegisterSensorViewModel : ViewModelBase
             OnPropertyChanged(nameof(Type));
         }
     }
+
+    public bool IsHome
+    {
+        get => _isHome;
+        set
+        {
+            _isHome = value;
+            OnPropertyChanged(nameof(IsHome));
+		}
+	}
 }

@@ -35,7 +35,7 @@ public class RegisterSensorCommand : CommandBase
     public override void Execute(object? parameter)
     {
         var sensor = new Sensor(_registerSensorViewModel.Type, _registerSensorViewModel.Keys,
-            _registerSensorViewModel.SensorType, _registerSensorViewModel.ConnectionType);
+            _registerSensorViewModel.SensorType, _registerSensorViewModel.ConnectionType, _registerSensorViewModel.IsHome);
         _repository.AddSensor(sensor);
         _registerSensorNavigationService.Navigate();
 

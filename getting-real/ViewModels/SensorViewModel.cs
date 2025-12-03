@@ -7,62 +7,72 @@ namespace getting_real_4.ViewModels;
 // This is a helper file for the SensorListingViewModel.cs
 public class SensorViewModel : ViewModelBase
 {
-    private readonly Sensor _senor;
+    private readonly Sensor _sensor;
 
     public SensorViewModel(Sensor sensor)
     {
-        _senor = sensor;
+        _sensor = sensor;
         ReplaceBatteryCommand = new ReplaceBatteryCommand(this);
     }
 
-    public string Id => _senor.Id.ToString();
+    public string Id => _sensor.Id.ToString();
 
     public string Type
     {
-        get => _senor.Type;
+        get => _sensor.Type;
         set
         {
-            _senor.Type = value;
+            _sensor.Type = value;
             OnPropertyChanged(nameof(Type));
         }
     }
 
     public string Keys
     {
-        get => _senor.Keys;
+        get => _sensor.Keys;
         set
         {
-            _senor.Keys = value;
+            _sensor.Keys = value;
             OnPropertyChanged(nameof(Keys));
         }
     }
 
     public string SensorType
     {
-        get => _senor.SensorType;
+        get => _sensor.SensorType;
         set
         {
-            _senor.SensorType = value;
+            _sensor.SensorType = value;
             OnPropertyChanged(nameof(SensorType));
         }
     }
 
     public string ConnectionType
     {
-        get => _senor.ConnectionType;
+        get => _sensor.ConnectionType;
         set
         {
-            _senor.ConnectionType = value;
+            _sensor.ConnectionType = value;
             OnPropertyChanged(nameof(ConnectionType));
+        }
+    }
+
+    public bool IsHome
+    {
+        get => _sensor.IsHome;
+        set
+        {
+            _sensor.IsHome = value;
+            OnPropertyChanged(nameof(IsHome));
         }
     }
 
     public int BatteryReplacementCount
     {
-        get => _senor.BatteryReplacementCount;
+        get => _sensor.BatteryReplacementCount;
         set
         {
-            _senor.BatteryReplacementCount = value;
+            _sensor.BatteryReplacementCount = value;
             OnPropertyChanged(nameof(BatteryReplacementCount));
         }
     }
@@ -72,7 +82,7 @@ public class SensorViewModel : ViewModelBase
 
     public void ReplaceBattery()
     {
-        _senor.ReplaceBattery();
+        _sensor.ReplaceBattery();
         OnPropertyChanged(nameof(BatteryReplacementCount));
     }
 }
