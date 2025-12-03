@@ -5,8 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        <DataGrid ItemsSource="{Binding Sensors}" Margin="0,38,0,0" AutoGenerateColumns="False">
+    <Grid Margin="10">
+        <TextBlock Text="Registrerede sensorer" FontSize="18" FontWeight="Bold" Margin="0,0,0,10"/>
+        <DataGrid ItemsSource="{Binding Sensors}" Margin="0,38,0,40" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding Id}" IsReadOnly="True" />
                 <DataGridTextColumn Header="Type" Binding="{Binding Type}" />
@@ -25,7 +26,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="Tiloej fyldemelder" Command="{Binding AddSensorCommand}" HorizontalAlignment="Left"
-                Margin="10,10,0,0"
-                VerticalAlignment="Top" />
+                Margin="0,0,0,0"
+                VerticalAlignment="Bottom" />
     </Grid>
 </UserControl>

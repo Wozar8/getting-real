@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <!-- Directly host the current view without DataTemplates or stores/services -->
+        <!-- We use a single ContentControl and swap its content in code-behind to switch screens. -->
         <ContentControl x:Name="MainContent" />
     </Grid>
 </Window>

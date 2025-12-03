@@ -9,21 +9,11 @@ namespace getting_real_4;
 /// </summary>
 public partial class App : Application
 {
-    private readonly SensorRepository _repository;
-
-    public App()
-    {
-        _repository = new SensorRepository();
-    }
-
+    // Keep App simple; navigation is handled in MainWindow.
     protected override void OnStartup(StartupEventArgs e)
     {
-        MainWindow = new MainWindow
-        {
-            DataContext = new SensorListingViewModel(_repository)
-        };
+        MainWindow = new MainWindow();
         MainWindow.Show();
-
         base.OnStartup(e);
     }
 }

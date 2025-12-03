@@ -7,24 +7,48 @@ namespace getting_real_4.ViewModels;
 
 public class RegisterSensorViewModel : ViewModelBase
 {
+    // These are the form fields bound from the RegisterSensorView.
     private string _connectionType;
     private string _keys;
     private string _sensorType;
     private string _type;
     private bool _isHome;
 
+    // Buttons in the view bind to these commands.
     public ICommand AddCommand { get; }
     public ICommand CancelCommand { get; }
 
+    // Simple events to tell the window to switch screens.
     public event EventHandler? CancelRequested;
     public event EventHandler? AddCompleted;
 
     public RegisterSensorViewModel(SensorRepository repository)
     {
-        AddCommand = new RegisterSensorCommand(repository, this, () => AddCompleted?.Invoke(this, EventArgs.Empty));
-        CancelCommand = new NavigateCommand(() => CancelRequested?.Invoke(this, EventArgs.Empty));
+        // When AddCommand executes, we add the sensor and then go back.
+        AddCommand = new RegisterSensorCommand(repository, this, OnAddCompleted);
+        // When CancelCommand executes, just go back without adding.
+        CancelCommand = new NavigateCommand(OnCancelRequested);
     }
 
+    private void OnCancelRequested()
+    {
+        var handler = CancelRequested;
+        if (handler != null)
+        {
+            handler(this, EventArgs.Empty);
+        }
+    }
+
+    private void OnAddCompleted()
+    {
+        var handler = AddCompleted;
+        if (handler != null)
+        {
+            handler(this, EventArgs.Empty);
+        }
+    }
+
+    // Each property notifies the UI when it changes so the view updates.
     public string SensorType
     {
         get => _sensorType;

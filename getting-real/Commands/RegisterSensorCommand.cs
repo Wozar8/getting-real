@@ -9,6 +9,7 @@ namespace getting_real_4.Commands;
 
 public class RegisterSensorCommand : CommandBase
 {
+    // After we add a sensor, we call this to go back to the list.
     private readonly Action _afterAddAction;
     private readonly RegisterSensorViewModel _registerSensorViewModel;
     private readonly SensorRepository _repository;
@@ -19,6 +20,7 @@ public class RegisterSensorCommand : CommandBase
         _repository = repository;
         _registerSensorViewModel = registerSensorViewModel;
         _afterAddAction = afterAddAction;
+        // Watch for changes in the Type field to enable/disable the Add button.
         _registerSensorViewModel.PropertyChanged += OnViewModelPropertyChanged;
     }
 
@@ -27,6 +29,7 @@ public class RegisterSensorCommand : CommandBase
         if (e.PropertyName == nameof(RegisterSensorViewModel.Type)) OnCanExecuteChanged();
     }
 
+    // Only allow Add when the Type field has a value.
     public override bool CanExecute(object? parameter)
     {
         return !string.IsNullOrEmpty(_registerSensorViewModel.Type) && base.CanExecute(parameter);
@@ -34,11 +37,15 @@ public class RegisterSensorCommand : CommandBase
 
     public override void Execute(object? parameter)
     {
+        // Create a new sensor from the form fields.
         var sensor = new Sensor(_registerSensorViewModel.Type, _registerSensorViewModel.Keys,
             _registerSensorViewModel.SensorType, _registerSensorViewModel.ConnectionType, _registerSensorViewModel.IsHome);
+        // Save it using the repository.
         _repository.AddSensor(sensor);
+        // Tell the window to go back to the list.
         _afterAddAction?.Invoke();
 
+        // Give simple feedback to the user.
         MessageBox.Show("Sensor registered successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
     }
 }
