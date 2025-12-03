@@ -1,5 +1,3 @@
-using System;
-
 namespace getting_real_4.Commands;
 
 public class NavigateCommand : CommandBase

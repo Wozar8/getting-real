@@ -1,6 +1,6 @@
 ﻿using System.Windows.Input;
-using getting_real_4.Models;
 using getting_real_4.Commands;
+using getting_real_4.Models;
 
 namespace getting_real_4.ViewModels;
 
