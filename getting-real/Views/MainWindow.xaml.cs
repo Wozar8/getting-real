@@ -11,14 +11,18 @@ namespace getting_real_4;
 public partial class MainWindow : Window
 {
     // We keep one shared repository so both screens see the same sensors.
-    private readonly SensorRepository _repository = new SensorRepository();
+    private readonly SensorRepository _repository;
 
-    public MainWindow()
+    public MainWindow(SensorRepository repository)
     {
+        _repository = repository;
         InitializeComponent();
         // Start by showing the sensor list screen.
         ShowSensorListing();
     }
+
+    // Expose repository so App can save on exit
+    public SensorRepository Repository => _repository;
 
     // This method shows the list of sensors.
     private void ShowSensorListing()

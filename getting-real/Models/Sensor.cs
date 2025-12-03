@@ -13,7 +13,7 @@ public class Sensor
         IsHome = isHome;
     }
 
-    public Guid Id { get; }
+    public Guid Id { get; init; }
     public string Type { get; set; }
     public string Keys { get; set; }
     public string SensorType { get; set; }
