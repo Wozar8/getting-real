@@ -1,24 +1,24 @@
+using System;
 using System.ComponentModel;
 using System.Windows;
 using getting_real_4.Models;
 using getting_real_4.Models.Repositories;
-using getting_real_4.Services;
 using getting_real_4.ViewModels;
 
 namespace getting_real_4.Commands;
 
 public class RegisterSensorCommand : CommandBase
 {
-    private readonly NavigationService _registerSensorNavigationService;
+    private readonly Action _afterAddAction;
     private readonly RegisterSensorViewModel _registerSensorViewModel;
     private readonly SensorRepository _repository;
 
     public RegisterSensorCommand(SensorRepository repository, RegisterSensorViewModel registerSensorViewModel,
-        NavigationService registerSensorNavigationService)
+        Action afterAddAction)
     {
         _repository = repository;
         _registerSensorViewModel = registerSensorViewModel;
-        _registerSensorNavigationService = registerSensorNavigationService;
+        _afterAddAction = afterAddAction;
         _registerSensorViewModel.PropertyChanged += OnViewModelPropertyChanged;
     }
 
@@ -37,7 +37,7 @@ public class RegisterSensorCommand : CommandBase
         var sensor = new Sensor(_registerSensorViewModel.Type, _registerSensorViewModel.Keys,
             _registerSensorViewModel.SensorType, _registerSensorViewModel.ConnectionType, _registerSensorViewModel.IsHome);
         _repository.AddSensor(sensor);
-        _registerSensorNavigationService.Navigate();
+        _afterAddAction?.Invoke();
 
         MessageBox.Show("Sensor registered successfully!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
     }

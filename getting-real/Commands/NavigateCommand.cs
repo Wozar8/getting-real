@@ -1,18 +1,18 @@
-using getting_real_4.Services;
+using System;
 
 namespace getting_real_4.Commands;
 
 public class NavigateCommand : CommandBase
 {
-    private readonly NavigationService _navigationService;
+    private readonly Action _navigateAction;
 
-    public NavigateCommand(NavigationService navigationService)
+    public NavigateCommand(Action navigateAction)
     {
-        _navigationService = navigationService;
+        _navigateAction = navigateAction;
     }
 
     public override void Execute(object? parameter)
     {
-        _navigationService.Navigate();
+        _navigateAction?.Invoke();
     }
 }
