@@ -10,13 +10,16 @@ public class SensorRepository : ISensorRepository
 {
     private readonly List<Sensor> _sensors = new();
     private const string DataFile = "sensors.csv";
+    private int _nextId = 1;
 
     public void AddSensor(Sensor sensor)
     {
+        // Assign a new incremental ID
+        sensor.Id = _nextId++;
         _sensors.Add(sensor);
     }
 
-    public Sensor GetSensorById(Guid id)
+    public Sensor GetSensorById(int id)
     {
         return _sensors.FirstOrDefault(s => s.Id == id);
     }
@@ -36,7 +39,7 @@ public class SensorRepository : ISensorRepository
         }
     }
 
-    public void DeleteSensor(Guid id)
+    public void DeleteSensor(int id)
     {
         var sensor = GetSensorById(id);
         if (sensor != null) _sensors.Remove(sensor);
@@ -50,6 +53,7 @@ public class SensorRepository : ISensorRepository
                 return;
 
             _sensors.Clear();
+            _nextId = 1;
 
             using var reader = new StreamReader(DataFile);
             while (!reader.EndOfStream)
@@ -75,11 +79,16 @@ public class SensorRepository : ISensorRepository
                         bool.Parse(parts[6])  // IsHome
                     )
                     {
-                        Id = Guid.Parse(parts[0]),
+                        Id = int.Parse(parts[0]),
                         BatteryReplacementCount = int.Parse(parts[5])
                     };
 
                     _sensors.Add(sensor);
+                    // Track next ID to avoid collisions
+                    if (sensor.Id >= _nextId)
+                    {
+                        _nextId = sensor.Id + 1;
+                    }
                 }
                 catch (FormatException fx)
                 {

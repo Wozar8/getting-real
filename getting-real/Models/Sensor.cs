@@ -4,7 +4,8 @@ public class Sensor
 {
     public Sensor(string type, string keys, string sensorType, string connectionType, bool isHome)
     {
-        Id = Guid.NewGuid();
+        // Id will be assigned by the repository when adding the sensor
+        Id = 0;
         Type = type;
         Keys = keys;
         SensorType = sensorType;
@@ -13,7 +14,7 @@ public class Sensor
         IsHome = isHome;
     }
 
-    public Guid Id { get; init; }
+    public int Id { get; set; }
     public string Type { get; set; }
     public string Keys { get; set; }
     public string SensorType { get; set; }

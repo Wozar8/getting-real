@@ -3,8 +3,8 @@
 public interface ISensorRepository
 {
     void AddSensor(Sensor sensor);
-    Sensor GetSensorById(Guid id);
+    Sensor GetSensorById(int id);
     IEnumerable<Sensor> GetAllSensors();
     void UpdateSensor(Sensor sensor);
-    void DeleteSensor(Guid id);
+    void DeleteSensor(int id);
 }
