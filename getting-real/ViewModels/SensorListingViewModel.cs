@@ -30,7 +30,7 @@ public class SensorListingViewModel : ViewModelBase
         AddSensorCommand = new NavigateCommand(OnAddSensor);
 
         // Load sensors to display.
-        UpdateRegisteredSensors();
+        Refresh();
     }
 
     private void OnAddSensor()
@@ -38,7 +38,7 @@ public class SensorListingViewModel : ViewModelBase
         _navigateToRegister?.Invoke();
     }
 
-    private void UpdateRegisteredSensors()
+    public void Refresh()
     {
         _sensors.Clear();
 

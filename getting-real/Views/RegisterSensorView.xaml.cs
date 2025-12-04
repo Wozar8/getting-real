@@ -1,8 +1,8 @@
-using System.Windows.Controls;
+using System.Windows;
 
 namespace getting_real_4.Views;
 
-public partial class RegisterSensorView : UserControl
+public partial class RegisterSensorView : Window
 {
     public RegisterSensorView()
     {

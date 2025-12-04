@@ -13,11 +13,14 @@ public partial class MainWindow : Window
     // We keep one shared repository so both screens see the same sensors.
     private readonly SensorRepository _repository;
 
+    // Track currently shown child window and close it when switching.
+    private Window? _currentChildWindow;
+
     public MainWindow(SensorRepository repository)
     {
         _repository = repository;
         InitializeComponent();
-        // Start by showing the sensor list screen.
+        // Start by showing the sensor list screen as a window.
         ShowSensorListing();
     }
 
@@ -27,19 +30,31 @@ public partial class MainWindow : Window
     // This method shows the list of sensors.
     private void ShowSensorListing()
     {
-        // Create the ViewModel that holds data and actions for the list screen.
+        CloseCurrentChildWindowIfAny();
         var vm = new SensorListingViewModel(_repository, ShowRegisterSensor);
-        // Create the visual control and connect it to the ViewModel.
-        var view = new SensorListingView { DataContext = vm };
-        // Put the view into the ContentControl defined in MainWindow.xaml.
-        MainContent.Content = view;
+        var window = new SensorListingView { DataContext = vm };
+        _currentChildWindow = window;
+        window.Show();
     }
 
     // This method shows the register/new sensor screen.
     private void ShowRegisterSensor()
     {
+        CloseCurrentChildWindowIfAny();
         var vm = new RegisterSensorViewModel(_repository, ShowSensorListing);
-        var view = new RegisterSensorView { DataContext = vm };
-        MainContent.Content = view;
+        var window = new RegisterSensorView { DataContext = vm };
+        _currentChildWindow = window;
+        window.Show();
+    }
+
+    private void CloseCurrentChildWindowIfAny()
+    {
+        if (_currentChildWindow != null)
+        {
+            // Unset DataContext to help GC and then close.
+            _currentChildWindow.DataContext = null;
+            _currentChildWindow.Close();
+            _currentChildWindow = null;
+        }
     }
 }
