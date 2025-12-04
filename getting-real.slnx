@@ -1,3 +1,4 @@
 <Solution>
-    <Project Path="getting-real/getting-real.csproj"/>
+    <Project Path="getting-real-test/getting-real-test.csproj" Id="195cef2a-4973-42e1-b718-8fe4b536a702" />
+    <Project Path="getting-real/getting-real.csproj" />
 </Solution>
