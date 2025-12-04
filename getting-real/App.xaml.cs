@@ -1,7 +1,5 @@
 ﻿using System.Windows;
 using getting_real_4.Models.Repositories;
-using getting_real_4.Views;
-using getting_real_4.ViewModels;
 
 namespace getting_real_4;
 

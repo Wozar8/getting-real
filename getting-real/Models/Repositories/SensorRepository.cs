@@ -1,8 +1,8 @@
 ﻿// The repository and repo interface folders could be moved into ViewModels folder
 
-using getting_real_4.Models.Repositories.Interfaces;
-using System.IO;
 using System.Diagnostics;
+using System.IO;
+using getting_real_4.Models.Repositories.Interfaces;
 
 namespace getting_real_4.Models.Repositories;
 
