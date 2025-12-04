@@ -1,5 +1,7 @@
 ﻿namespace getting_real_4.Models;
 
+// TODO: Validation is missing
+
 public class Sensor
 {
     public Sensor(string type, string keys, string sensorType, string connectionType, bool isHome)
