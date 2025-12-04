@@ -16,6 +16,9 @@ public partial class MainWindow : Window
     // Track currently shown child window and close it when switching.
     private Window? _currentChildWindow;
 
+    // Keep reference to the listing VM so we can refresh after registering.
+    private SensorListingViewModel? _listingVm;
+
     public MainWindow(SensorRepository repository)
     {
         _repository = repository;
@@ -31,20 +34,24 @@ public partial class MainWindow : Window
     private void ShowSensorListing()
     {
         CloseCurrentChildWindowIfAny();
-        var vm = new SensorListingViewModel(_repository, ShowRegisterSensor);
-        var window = new SensorListingView { DataContext = vm };
+        _listingVm = new SensorListingViewModel(_repository, ShowRegisterSensor);
+        var window = new SensorListingView { DataContext = _listingVm, Owner = this };
         _currentChildWindow = window;
         window.Show();
     }
 
-    // This method shows the register/new sensor screen.
+    // This method shows the register/new sensor screen as a modal dialog.
     private void ShowRegisterSensor()
     {
-        CloseCurrentChildWindowIfAny();
-        var vm = new RegisterSensorViewModel(_repository, ShowSensorListing);
-        var window = new RegisterSensorView { DataContext = vm };
-        _currentChildWindow = window;
-        window.Show();
+        var registerWindow = new RegisterSensorView { Owner = this };
+        var registerVm = new RegisterSensorViewModel(_repository, () =>
+        {
+            // After adding, refresh the listing and close the dialog.
+            _listingVm?.Refresh();
+            registerWindow.Close();
+        });
+        registerWindow.DataContext = registerVm;
+        registerWindow.ShowDialog();
     }
 
     private void CloseCurrentChildWindowIfAny()
