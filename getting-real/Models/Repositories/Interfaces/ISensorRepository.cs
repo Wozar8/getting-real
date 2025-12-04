@@ -4,7 +4,7 @@ public interface ISensorRepository
 {
     void AddSensor(Sensor sensor);
     Sensor GetSensorById(int id);
-    IEnumerable<Sensor> GetAllSensors();
+    List<Sensor> GetAllSensors();
     void UpdateSensor(Sensor sensor);
     void DeleteSensor(int id);
 }

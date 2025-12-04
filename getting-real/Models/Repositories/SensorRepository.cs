@@ -24,7 +24,7 @@ public class SensorRepository : ISensorRepository
         return _sensors.FirstOrDefault(s => s.Id == id);
     }
 
-    public IEnumerable<Sensor> GetAllSensors()
+    public List<Sensor> GetAllSensors()
     {
         return _sensors;
     }
