@@ -1,5 +1,7 @@
 ﻿using System.Windows;
 using getting_real_4.Models.Repositories;
+using getting_real_4.Views;
+using getting_real_4.ViewModels;
 
 namespace getting_real_4;
 
@@ -15,10 +17,28 @@ public partial class App : Application
         _repository = new SensorRepository();
         _repository.Load();
 
-        // Use MainWindow as the shell and delegate navigation to it.
-        var mainWindow = new MainWindow(_repository);
-        MainWindow = mainWindow;
-        mainWindow.Show();
+        // Use SensorListingView as the main window.
+        SensorListingView? listingWindow = null;
+        SensorListingViewModel? listingVm = null;
+
+        var navigateToRegister = new Action(() =>
+        {
+            var registerWindow = new RegisterSensorView();
+            var registerVm = new RegisterSensorViewModel(_repository, () =>
+            {
+                // After adding or cancel, refresh the listing and close the dialog.
+                listingVm?.Refresh();
+                registerWindow.Close();
+            });
+            registerWindow.DataContext = registerVm;
+            registerWindow.ShowDialog();
+        });
+
+        listingVm = new SensorListingViewModel(_repository, navigateToRegister);
+        listingWindow = new SensorListingView { DataContext = listingVm };
+
+        MainWindow = listingWindow;
+        listingWindow.Show();
 
         base.OnStartup(e);
     }
