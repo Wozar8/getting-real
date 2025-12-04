@@ -9,7 +9,7 @@ namespace getting_real_4.Models.Repositories;
 public class SensorRepository : ISensorRepository
 {
     private readonly List<Sensor> _sensors = new();
-    private const string DataFile = "sensors.csv";
+    private const string dataFile = "sensors.csv";
     private int _nextId = 1;
 
     public void AddSensor(Sensor sensor)
@@ -49,13 +49,13 @@ public class SensorRepository : ISensorRepository
     {
         try
         {
-            if (!File.Exists(DataFile))
+            if (!File.Exists(dataFile))
                 return;
 
             _sensors.Clear();
             _nextId = 1;
 
-            using var reader = new StreamReader(DataFile);
+            using var reader = new StreamReader(dataFile);
             while (!reader.EndOfStream)
             {
                 var line = reader.ReadLine();
@@ -65,7 +65,7 @@ public class SensorRepository : ISensorRepository
                 var parts = line.Split(',');
                 if (parts.Length != 7)
                 {
-                    Debug.WriteLine($"Skipping malformed line in {DataFile}: '{line}'");
+                    Debug.WriteLine($"Skipping malformed line in {dataFile}: '{line}'");
                     continue;
                 }
 
@@ -93,14 +93,14 @@ public class SensorRepository : ISensorRepository
                 catch (FormatException fx)
                 {
                     // Skip bad line, but log it for diagnosis
-                    Debug.WriteLine($"Skipping line with parse error in {DataFile}: '{line}' ({fx.Message})");
+                    Debug.WriteLine($"Skipping line with parse error in {dataFile}: '{line}' ({fx.Message})");
                     continue;
                 }
             }
         }
         catch (UnauthorizedAccessException uaEx)
         {
-            throw new IOException($"Access denied reading '{DataFile}'.", uaEx);
+            throw new IOException($"Access denied reading '{dataFile}'.", uaEx);
         }
     }
 
@@ -108,7 +108,7 @@ public class SensorRepository : ISensorRepository
     {
         try
         {
-            using var writer = new StreamWriter(DataFile);
+            using var writer = new StreamWriter(dataFile);
             foreach (var sensor in _sensors)
             {
                 writer.WriteLine($"{sensor.Id},{sensor.Type},{sensor.Keys},{sensor.SensorType},{sensor.ConnectionType},{sensor.BatteryReplacementCount},{sensor.IsHome}");
@@ -116,7 +116,7 @@ public class SensorRepository : ISensorRepository
         }
         catch (UnauthorizedAccessException uaEx)
         {
-            throw new IOException($"Access denied writing '{DataFile}'.", uaEx);
+            throw new IOException($"Access denied writing '{dataFile}'.", uaEx);
         }
     }
 }
