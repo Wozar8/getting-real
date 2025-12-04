@@ -1,4 +1,6 @@
-﻿
+﻿using getting_real_4.Models.Repositories;
+using getting_real_4.Models;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace getting_real_test
 {
@@ -6,10 +8,19 @@ namespace getting_real_test
     public sealed class Test1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void AddSensor_IncreasesRepositoryCount()
         {
-            
-            Assert.AreEqual(1, 1);
+            // Arrange
+            var repo = new SensorRepository();
+            var initialCount = repo.GetAllSensors().Count();
+
+            // Act
+            var sensor = new Sensor("DHT-LoRa", "Key123", "ultralyd", "LoRaWan", true);
+            repo.AddSensor(sensor);
+
+            // Assert
+            var newCount = repo.GetAllSensors().Count();
+            Assert.AreEqual(initialCount + 1, newCount);
         }
     }
 }
