@@ -1,6 +1,5 @@
-﻿using getting_real_4.Models.Repositories;
-using getting_real_4.Models;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using getting_real_4.Models;
+using getting_real_4.Models.Repositories;
 
 namespace getting_real_test
 {
