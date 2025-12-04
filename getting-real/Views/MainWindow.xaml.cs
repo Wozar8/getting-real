@@ -13,11 +13,11 @@ public partial class MainWindow : Window
     // We keep one shared repository so both screens see the same sensors.
     private readonly SensorRepository _repository;
 
-    // Track currently shown child window and close it when switching.
-    private Window? _currentChildWindow;
-
     // Keep reference to the listing VM so we can refresh after registering.
     private SensorListingViewModel? _listingVm;
+
+    // Keep a single listing window instance.
+    private SensorListingView? _listingWindow;
 
     public MainWindow(SensorRepository repository)
     {
@@ -33,17 +33,23 @@ public partial class MainWindow : Window
     // This method shows the list of sensors.
     private void ShowSensorListing()
     {
-        CloseCurrentChildWindowIfAny();
-        _listingVm = new SensorListingViewModel(_repository, ShowRegisterSensor);
-        var window = new SensorListingView { DataContext = _listingVm, Owner = this };
-        _currentChildWindow = window;
-        window.Show();
+        if (_listingWindow == null)
+        {
+            _listingVm = new SensorListingViewModel(_repository, ShowRegisterSensor);
+            _listingWindow = new SensorListingView { DataContext = _listingVm };
+            _listingWindow.Show();
+        }
+        else
+        {
+            _listingVm?.Refresh();
+            _listingWindow.Activate();
+        }
     }
 
     // This method shows the register/new sensor screen as a modal dialog.
     private void ShowRegisterSensor()
     {
-        var registerWindow = new RegisterSensorView { Owner = this };
+        var registerWindow = new RegisterSensorView();
         var registerVm = new RegisterSensorViewModel(_repository, () =>
         {
             // After adding, refresh the listing and close the dialog.
@@ -52,16 +58,5 @@ public partial class MainWindow : Window
         });
         registerWindow.DataContext = registerVm;
         registerWindow.ShowDialog();
-    }
-
-    private void CloseCurrentChildWindowIfAny()
-    {
-        if (_currentChildWindow != null)
-        {
-            // Unset DataContext to help GC and then close.
-            _currentChildWindow.DataContext = null;
-            _currentChildWindow.Close();
-            _currentChildWindow = null;
-        }
     }
 }
