@@ -7,4 +7,6 @@ public interface ISensorRepository
     List<Sensor> GetAllSensors();
     void UpdateSensor(Sensor sensor);
     void DeleteSensor(int id);
+    // void Load(); // Hvad vi manglede :)))))
+    // void Save();
 }
