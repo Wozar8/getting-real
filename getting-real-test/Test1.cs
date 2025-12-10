@@ -10,15 +10,15 @@ namespace getting_real_test
         public void AddSensor_IncreasesRepositoryCount()
         {
             // Arrange
-            var repo = new SensorRepository();
-            var initialCount = repo.GetAllSensors().Count();
+            SensorRepository repo = new SensorRepository();
 
-            // Act
-            var sensor = new Sensor("DHT-LoRa", "Key123", "ultralyd", "LoRaWan", true);
+			// Act
+			int initialCount = repo.GetAllSensors().Count();
+			Sensor sensor = new Sensor("DHT-LoRa", "Key123", "ultralyd", "LoRaWan", true);
             repo.AddSensor(sensor);
 
             // Assert
-            var newCount = repo.GetAllSensors().Count();
+            int newCount = repo.GetAllSensors().Count();
             Assert.AreEqual(initialCount + 1, newCount);
         }
     }
