@@ -22,7 +22,7 @@ fontsize=22</panel_attributes>
       <h>50</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
-indtastSensorOplysniner(erPåLager, nøgler, sensorType, forbindelsestype)
+angivSensorOplysniner(erPåLager, nøgler, sensorType, forbindelsestype)
 fontsize=18</panel_attributes>
     <additional_attributes>590.0;30.0;10.0;30.0</additional_attributes>
   </element>
@@ -102,15 +102,15 @@ fontsize=18</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>450</x>
+      <x>490</x>
       <y>510</y>
-      <w>690</w>
+      <w>610</w>
       <h>50</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
-indtastBatteriOplysniner(registrerDato, batteriType, monteringsType, maksKapacitet)
+angivBatteriOplysniner(registrerDato, batteriType, maksKapacitet)
 fontsize=18</panel_attributes>
-    <additional_attributes>630.0;30.0;50.0;30.0</additional_attributes>
+    <additional_attributes>590.0;30.0;10.0;30.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>

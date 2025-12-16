@@ -18,7 +18,7 @@ type
 nøgler
 sensorType
 batterierstatningsantal
-læggerPåLager
+liggerPåLager
 forbindelsestype
 
 fontsize=26</panel_attributes>
