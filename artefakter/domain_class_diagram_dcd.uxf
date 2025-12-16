@@ -1,7 +1,52 @@
-<diagram program="umletino" version="15.1"><zoom_level>11</zoom_level><help_text>Space for diagra</help_text><element><id>UMLClass</id><coordinates><x>132</x><y>528</y><w>1309</w><h>550</h></coordinates><panel_attributes>lt=.
-Application Layer</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>275</x><y>66</y><w>1045</w><h>440</h></coordinates><panel_attributes>lt=.
-UI Layer</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>319</x><y>1100</y><w>781</w><h>484</h></coordinates><panel_attributes>lt=.
-Domain Layer</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>165</x><y>583</y><w>473</w><h>209</h></coordinates><panel_attributes>SensorRespository
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <help_text>Space for diagra</help_text>
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>296</x>
+      <y>424</y>
+      <w>944</w>
+      <h>416</h>
+    </coordinates>
+    <panel_attributes>lt=.
+Application Layer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>88</y>
+      <w>760</w>
+      <h>320</h>
+    </coordinates>
+    <panel_attributes>lt=.
+UI Layer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>432</x>
+      <y>856</y>
+      <w>568</w>
+      <h>352</h>
+    </coordinates>
+    <panel_attributes>lt=.
+Domain Layer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>320</x>
+      <y>472</y>
+      <w>344</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>SensorRespository
 --
 - dataFile : string
 - nextId : int
@@ -14,7 +59,18 @@ Domain Layer</panel_attributes><additional_attributes></additional_attributes></
 + DeleteSensor(id : int)
 + Load()
 + Save()
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>396</x><y>1144</y><w>682</w><h>231</h></coordinates><panel_attributes>Sensor
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>488</x>
+      <y>888</y>
+      <w>496</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>Sensor
 --
 + Id : int
 + Type : string
@@ -26,9 +82,31 @@ Domain Layer</panel_attributes><additional_attributes></additional_attributes></
 
 --
 + Sensor(type : string, keys : string, sensorType : string, connectionType : string, isHome : bool)
-+ ReplaceBattery()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>88</x><y>726</y><w>330</w><h>550</h></coordinates><panel_attributes>lt=&lt;-
-m1=sensors
-r1=0..*</panel_attributes><additional_attributes>280;470;10;470;10;10;70;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>297</x><y>99</y><w>968</w><h>176</h></coordinates><panel_attributes>RegisterSensorCommand
++ ReplaceBattery()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>296</x>
+      <y>576</y>
+      <w>208</w>
+      <h>416</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=sensors\n{List}
+r1=0..*</panel_attributes>
+    <additional_attributes>240.0;480.0;10.0;480.0;10.0;10.0;30.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>416</x>
+      <y>112</y>
+      <w>704</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>RegisterSensorCommand
 --
 - onSensorAfterAdd : Action
 
@@ -37,31 +115,97 @@ r1=0..*</panel_attributes><additional_attributes>280;470;10;470;10;10;70;10</add
 - OnViewModelPropertyChanged(sender : object, e : PropertyChangedEventArgs)
 + &lt;&lt;override&gt;&gt; CanExecute(parameter : object) : bool
 + &lt;&lt;override&gt;&gt; Execute(parameter : object)
-fontsize=12</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>165</x><y>825</y><w>561</w><h>231</h></coordinates><panel_attributes>RegisterSensorViewModel
+fontsize=12</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>320</x>
+      <y>656</y>
+      <w>408</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>RegisterSensorViewModel
 --
 - navigateBack : Action
 + ConnectionType : string
 + Keys : string
 + SensorType : string
 + Type : string
-+ IsHome : bool
++ InStorage : bool
 + &lt;&lt;get&gt;&gt; ProceedCommand : ICommand
 + &lt;&lt;get&gt;&gt; CancelCommand : ICommand
 
 --
 + RegisterSensorViewModel(sensorRepository : SensorRepository, navigateBack : Action)
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>396</x><y>1430</y><w>682</w><h>132</h></coordinates><panel_attributes>Battery
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>488</x>
+      <y>1096</y>
+      <w>496</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Battery
 --
 + BatteryType : string
 + MaxCapacity : double
 + RegisterDate : DateTime
 --
-+ Battery(registerDate : DateTime, batterType : string, maxCapacity : double, mountType : string)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>363</x><y>781</y><w>33</w><h>66</h></coordinates><panel_attributes>lt=.&gt;
-</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1254</x><y>253</y><w>231</w><h>473</h></coordinates><panel_attributes>lt=-&gt;
++ Battery(registerDate : DateTime, batterType : string, maxCapacity : double, mountType : string)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>464</x>
+      <y>624</y>
+      <w>24</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+</panel_attributes>
+    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1112</x>
+      <y>224</y>
+      <w>176</w>
+      <h>248</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
 r2=1
-m2=registerBatteryViewModel</panel_attributes><additional_attributes>10;10;40;10;40;410</additional_attributes></element><element><id>Relation</id><coordinates><x>176</x><y>231</y><w>143</w><h>374</h></coordinates><panel_attributes>lt=-&gt;
+m2=registerBatteryViewModel</panel_attributes>
+    <additional_attributes>10.0;10.0;40.0;10.0;40.0;290.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>328</x>
+      <y>208</y>
+      <w>112</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
 r2=   1
-m2=sensorRepository</panel_attributes><additional_attributes>110;10;10;320</additional_attributes></element><element><id>UMLClass</id><coordinates><x>297</x><y>286</y><w>979</w><h>198</h></coordinates><panel_attributes>SensorProceedCommand
+m2=sensorRepository</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;330.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>416</x>
+      <y>248</y>
+      <w>712</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>SensorProceedCommand
 --
 - navigateAction: Action
 
@@ -69,7 +213,18 @@ m2=sensorRepository</panel_attributes><additional_attributes>110;10;10;320</addi
 +SensorProceedCommand(sensorRepo : SensorRepository, sensor : Sensor, proceedAction : Action, registerSensorViewModel : RegisterSensorViewModel)
 - onViewModelPropertyChanged(navigateAction : Action)
 + &lt;&lt;override&gt;&gt; Execute(parameter : object)
-+ &lt;&lt;override&gt;&gt; CanExecute(object? parameter)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>748</x><y>704</y><w>671</w><h>231</h></coordinates><panel_attributes>RegisterBatteryViewModel
++ &lt;&lt;override&gt;&gt; CanExecute(object? parameter)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>728</x>
+      <y>456</y>
+      <w>488</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>RegisterBatteryViewModel
 --
 - navigateBack : Action
 + RegistrationDate : DateTime
@@ -80,16 +235,84 @@ m2=sensorRepository</panel_attributes><additional_attributes>110;10;10;320</addi
 
 --
 + RegisterBatteryViewModel(sensorRepository : SensorRepository, navigateBack : Action, sensor : Sensor )
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>737</x><y>1364</y><w>77</w><h>88</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>736</x>
+      <y>1048</y>
+      <w>56</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
 m1=battery
 r1=1
-</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>693</x><y>473</y><w>33</w><h>374</h></coordinates><panel_attributes>lt=.&gt;
-
-
-</panel_attributes><additional_attributes>10;10;10;320</additional_attributes></element><element><id>Relation</id><coordinates><x>946</x><y>473</y><w>198</w><h>253</h></coordinates><panel_attributes>lt=-&gt;
+</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>688</x>
+      <y>400</y>
+      <w>152</w>
+      <h>272</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=\nregisterSensorViewModel
+r2=\n1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;320.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>872</x>
+      <y>384</y>
+      <w>152</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
 m2=\nregisterBatteryViewModel
-r2=\n1</panel_attributes><additional_attributes>10;10;10;210</additional_attributes></element><element><id>Relation</id><coordinates><x>352</x><y>473</y><w>33</w><h>132</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;100;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1067</x><y>319</y><w>429</w><h>968</h></coordinates><panel_attributes>lt=-&gt;
+r2=\n1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>456</x>
+      <y>384</y>
+      <w>24</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>976</x>
+      <y>272</y>
+      <w>272</w>
+      <h>720</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
 r2=  1
-m2=  sensor</panel_attributes><additional_attributes>190;10;370;10;370;850;10;850</additional_attributes></element><element><id>Relation</id><coordinates><x>1067</x><y>143</y><w>462</w><h>1221</h></coordinates><panel_attributes>lt=-&gt;
+m2=  sensor</panel_attributes>
+    <additional_attributes>190.0;10.0;320.0;10.0;320.0;870.0;10.0;870.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>976</x>
+      <y>144</y>
+      <w>296</w>
+      <h>904</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
 r2=  1
-m2=  sensor</panel_attributes><additional_attributes>180;10;400;10;400;1080;10;1080</additional_attributes></element></diagram>
+m2=  sensor</panel_attributes>
+    <additional_attributes>180.0;10.0;350.0;10.0;350.0;1100.0;10.0;1100.0</additional_attributes>
+  </element>
+</diagram>
