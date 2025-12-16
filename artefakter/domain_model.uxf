@@ -1,4 +1,4 @@
-<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><help_text></help_text><element><id>UMLClass</id><coordinates><x>38</x><y>117</y><w>252</w><h>216</h></coordinates><panel_attributes>Sensor
+<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><help_text></help_text><element><id>UMLClass</id><coordinates><x>119</x><y>180</y><w>252</w><h>216</h></coordinates><panel_attributes>Sensor
 --
 id
 type 
@@ -9,23 +9,23 @@ batterierstatningsantal
 læggerPåLager
 forbindelsestype
 
-fontsize=20</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>398</x><y>342</y><w>252</w><h>117</h></coordinates><panel_attributes>Batteri
+fontsize=20</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>479</x><y>405</y><w>252</w><h>117</h></coordinates><panel_attributes>Batteri
 --
 registreringsdato
 batteriType
 maksKapacitet
 
 
-fontsize=20</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>398</x><y>180</y><w>252</w><h>117</h></coordinates><panel_attributes>Organisation
+fontsize=20</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>479</x><y>243</y><w>252</w><h>117</h></coordinates><panel_attributes>Organisation
 --
 id
 navn
 antalSensorer
 
-fontsize=20</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>155</x><y>324</y><w>261</w><h>108</h></coordinates><panel_attributes>lt=-
+fontsize=20</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>236</x><y>387</y><w>261</w><h>108</h></coordinates><panel_attributes>lt=-
 m1=0..1
 m2=0..1
-indeholdt i</panel_attributes><additional_attributes>10;10;10;90;270;90</additional_attributes></element><element><id>Relation</id><coordinates><x>281</x><y>225</y><w>135</w><h>45</h></coordinates><panel_attributes>lt=-
+indeholdt i</panel_attributes><additional_attributes>10;10;10;90;270;90</additional_attributes></element><element><id>Relation</id><coordinates><x>362</x><y>288</y><w>135</w><h>45</h></coordinates><panel_attributes>lt=-
 m1=0..*
 m2=0..1
 tilhører</panel_attributes><additional_attributes>10;20;130;20</additional_attributes></element></diagram>
