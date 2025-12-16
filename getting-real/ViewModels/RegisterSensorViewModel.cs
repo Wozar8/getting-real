@@ -11,7 +11,7 @@ public class RegisterSensorViewModel : ViewModelBase
     private string _keys;
     private string _sensorType;
     private string _type;
-    private bool _isHome;
+    private bool _inStorage;
 
     // Buttons in the view bind to these commands.
     public ICommand AddCommand { get; }
@@ -71,13 +71,13 @@ public class RegisterSensorViewModel : ViewModelBase
         }
     }
 
-    public bool IsHome
+    public bool InStorage
     {
-        get => _isHome;
+        get => _inStorage;
         set
         {
-            _isHome = value;
-            OnPropertyChanged(nameof(IsHome));
+            _inStorage = value;
+            OnPropertyChanged(nameof(InStorage));
         }
     }
 }

@@ -38,7 +38,7 @@ public class RegisterSensorCommand : CommandBase
     {
         // Create a new sensor from the form fields.
         var sensor = new Sensor(_registerSensorViewModel.Type, _registerSensorViewModel.Keys,
-            _registerSensorViewModel.SensorType, _registerSensorViewModel.ConnectionType, _registerSensorViewModel.IsHome);
+            _registerSensorViewModel.SensorType, _registerSensorViewModel.ConnectionType, _registerSensorViewModel.InStorage);
         // Save it using the repository.
         _repository.AddSensor(sensor);
         // Tell the window to go back to the list.

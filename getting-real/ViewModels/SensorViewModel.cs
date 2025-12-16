@@ -57,13 +57,13 @@ public class SensorViewModel : ViewModelBase
         }
     }
 
-    public bool IsHome
+    public bool InStorage
     {
-        get => _sensor.IsHome;
+        get => _sensor.InStorage;
         set
         {
-            _sensor.IsHome = value;
-            OnPropertyChanged(nameof(IsHome));
+            _sensor.InStorage = value;
+            OnPropertyChanged(nameof(InStorage));
         }
     }
 

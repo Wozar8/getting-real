@@ -11,7 +11,7 @@
                 <DataGridTextColumn Header="Sensor Type" Binding="{Binding SensorType}" />
                 <DataGridTextColumn Header="Connection" Binding="{Binding ConnectionType}" />
                 <DataGridTextColumn Header="Keys" Binding="{Binding Keys}" />
-                <DataGridTextColumn Header="Er hjemme?" Binding="{Binding IsHome}" />
+                <DataGridTextColumn Header="Er hjemme?" Binding="{Binding InStorage}" />
                 <DataGridTextColumn Header="Battery Replacements" Binding="{Binding BatteryReplacementCount}" IsReadOnly="True" />
                 <DataGridTemplateColumn Header="Actions">
                     <DataGridTemplateColumn.CellTemplate>

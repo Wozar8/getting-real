@@ -6,7 +6,7 @@ namespace getting_real_4.Models;
 
 public class Sensor
 {
-	public Sensor(string type, string keys, string sensorType, string connectionType, bool isHome)
+	public Sensor(string type, string keys, string sensorType, string connectionType, bool inStorage)
 	{
 		validateSensorType(sensorType);
 		// Id will be assigned by the repository when adding the sensor
@@ -16,7 +16,7 @@ public class Sensor
 		SensorType = sensorType;
 		ConnectionType = connectionType;
 		BatteryReplacementCount = 0;
-		IsHome = isHome;
+		InStorage = inStorage;
 	}
 
 	public int Id { get; set; }
@@ -24,7 +24,7 @@ public class Sensor
 	public string Keys { get; set; }
 	public string SensorType { get; set; }
 	public string ConnectionType { get; set; }
-	public bool IsHome { get; set; }
+	public bool InStorage { get; set; }
 
 	// Number of times the battery has been replaced for this sensor
 	public int BatteryReplacementCount { get; set; }

@@ -76,7 +76,7 @@ public class SensorRepository : ISensorRepository
                         parts[2],  // Keys
                         parts[3],  // SensorType
                         parts[4],  // ConnectionType
-                        bool.Parse(parts[6])  // IsHome
+                        bool.Parse(parts[6])  // InStorage
                     )
                     {
                         Id = int.Parse(parts[0]),
@@ -111,7 +111,7 @@ public class SensorRepository : ISensorRepository
             using var writer = new StreamWriter(dataFile);
             foreach (var sensor in _sensors)
             {
-                writer.WriteLine($"{sensor.Id},{sensor.Type},{sensor.Keys},{sensor.SensorType},{sensor.ConnectionType},{sensor.BatteryReplacementCount},{sensor.IsHome}");
+                writer.WriteLine($"{sensor.Id},{sensor.Type},{sensor.Keys},{sensor.SensorType},{sensor.ConnectionType},{sensor.BatteryReplacementCount},{sensor.InStorage}");
             }
         }
         catch (UnauthorizedAccessException uaEx)
