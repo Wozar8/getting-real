@@ -1,17 +1,141 @@
-<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLActor</id><coordinates><x>100</x><y>160</y><w>140</w><h>110</h></coordinates><panel_attributes>: Medarbejder
-fontsize=18</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>160</x><y>400</y><w>610</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>420</x>
+      <y>220</y>
+      <w>160</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>: Medarbejder
+fontsize=22</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>450</y>
+      <w>610</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
 indtastSensorOplysniner(erPåLager, nøgler, sensorType, forbindelsestype)
-fontsize=15</panel_attributes><additional_attributes>590;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>160</x><y>580</y><w>610</w><h>40</h></coordinates><panel_attributes>lt=&lt;.
+fontsize=18</panel_attributes>
+    <additional_attributes>590.0;30.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>630</y>
+      <w>610</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
 sensor registrering bekræftet
-fontsize=15</panel_attributes><additional_attributes>10;20;590;20</additional_attributes></element><element><id>UMLClass</id><coordinates><x>690</x><y>240</y><w>110</w><h>40</h></coordinates><panel_attributes>: System
-fontsize=18</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>160</x><y>260</y><w>30</w><h>420</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;10;400</additional_attributes></element><element><id>Relation</id><coordinates><x>740</x><y>270</y><w>30</w><h>410</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;10;390</additional_attributes></element><element><id>Text</id><coordinates><x>380</x><y>220</y><w>200</w><h>70</h></coordinates><panel_attributes>_Registrer Sensor_
+fontsize=18</panel_attributes>
+    <additional_attributes>10.0;30.0;590.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1020</x>
+      <y>300</y>
+      <w>110</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>: System
+fontsize=22</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>320</y>
+      <w>30</w>
+      <h>420</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;400.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1070</x>
+      <y>330</y>
+      <w>30</w>
+      <h>410</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;390.0</additional_attributes>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>710</x>
+      <y>280</y>
+      <w>200</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>_Registrer Sensor_
 style=wordwrap
-fontsize=18</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>160</x><y>340</y><w>610</w><h>40</h></coordinates><panel_attributes>lt=&lt;.
+fontsize=22</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>390</y>
+      <w>610</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
 vis vindue til oplysninger
-fontsize=15</panel_attributes><additional_attributes>10;20;590;20</additional_attributes></element><element><id>Relation</id><coordinates><x>160</x><y>460</y><w>620</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+fontsize=18</panel_attributes>
+    <additional_attributes>10.0;30.0;590.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>510</y>
+      <w>690</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
 indtastBatteriOplysniner(registrerDato, batteriType, monteringsType, maksKapacitet)
-fontsize=15</panel_attributes><additional_attributes>590;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>160</x><y>520</y><w>610</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+fontsize=18</panel_attributes>
+    <additional_attributes>630.0;30.0;50.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>570</y>
+      <w>610</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
 registrerSensor(SensorOplysninger, BatteriOplysninger)
-fontsize=15</panel_attributes><additional_attributes>590;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>160</x><y>280</y><w>610</w><h>40</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+fontsize=18</panel_attributes>
+    <additional_attributes>590.0;30.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>330</y>
+      <w>610</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
 registrerNySensor
-fontsize=15</panel_attributes><additional_attributes>590;20;10;20</additional_attributes></element></diagram>
+fontsize=18</panel_attributes>
+    <additional_attributes>590.0;30.0;10.0;30.0</additional_attributes>
+  </element>
+</diagram>
