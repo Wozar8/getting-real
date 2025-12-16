@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <help_text/>
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>455</x>
+      <y>294</y>
+      <w>217</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>Sensor
+--
+id
+type 
+// DevEUI, AppEUI
+nøgler
+sensorType
+batterierstatningsantal
+læggerPåLager
+forbindelsestype
+
+fontsize=26</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>749</x>
+      <y>497</y>
+      <w>245</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>Batteri
+--
+registreringsdato
+batteriType
+maksKapacitet
+
+
+fontsize=26</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>805</x>
+      <y>350</y>
+      <w>196</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>Organisation
+--
+id
+navn
+antalSensorer
+
+fontsize=26</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>567</x>
+      <y>476</y>
+      <w>196</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..1
+m2=0..1
+indeholdt i
+fontsize=24</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0;260.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>665</x>
+      <y>378</y>
+      <w>154</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..*
+m2=0..1
+tilhører
+fontsize=24</panel_attributes>
+    <additional_attributes>10.0;30.0;200.0;30.0</additional_attributes>
+  </element>
+</diagram>

@@ -1,9 +1,32 @@
-<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLUseCase</id><coordinates><x>144</x><y>414</y><w>162</w><h>108</h></coordinates><panel_attributes>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <help_text>Space for diagram notes</help_text>
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>380</x>
+      <y>590</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>
 2
 Odense Renovation
 37
 
-fontsize=18</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>387</x><y>396</y><w>189</w><h>153</h></coordinates><panel_attributes>
+fontsize=22</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>660</x>
+      <y>570</y>
+      <w>210</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>
 1
 DHT-LoRa
 23434565ahjttrh
@@ -11,28 +34,127 @@ ultralyd
 0
 0
 
-fontsize=18</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>666</x><y>414</y><w>162</w><h>108</h></coordinates><panel_attributes>
-2025-12-15T00:16
+fontsize=22</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>960</x>
+      <y>580</y>
+      <w>190</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>
 AAA
+2025-12-15T00:16
 1250
 
-fontsize=18</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>162</x><y>0</y><w>135</w><h>36</h></coordinates><panel_attributes>Organisation
-fontsize=20
-style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>441</x><y>0</y><w>81</w><h>36</h></coordinates><panel_attributes>Sensor
-fontsize=20
-style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>711</x><y>0</y><w>81</w><h>36</h></coordinates><panel_attributes>Batteri
-fontsize=20
-style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>144</x><y>144</y><w>162</w><h>117</h></coordinates><panel_attributes>
+fontsize=22</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>400</x>
+      <y>140</y>
+      <w>180</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Organisation
+fontsize=26
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>710</x>
+      <y>140</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Sensor
+fontsize=26
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Text</id>
+    <coordinates>
+      <x>1010</x>
+      <y>140</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Batteri
+fontsize=26
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>380</x>
+      <y>300</y>
+      <w>200</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>
 1
 NanoConnect APS
 418
 
-fontsize=18</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>144</x><y>594</y><w>162</w><h>99</h></coordinates><panel_attributes>
+fontsize=22</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>380</x>
+      <y>750</y>
+      <w>190</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>
 5
 FAB
 19
 
-fontsize=18</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>297</x><y>459</y><w>108</w><h>27</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;100;10</additional_attributes></element><element><id>Relation</id><coordinates><x>567</x><y>459</y><w>117</w><h>27</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;110;10</additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>387</x><y>45</y><w>189</w><h>153</h></coordinates><panel_attributes>
+fontsize=22</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>570</x>
+      <y>640</y>
+      <w>110</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>860</x>
+      <y>640</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>660</x>
+      <y>190</y>
+      <w>210</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>
 2
 DHT-NBIoT
 w5uiohg8934
@@ -40,7 +162,18 @@ ultralyd
 5
 1
 
-fontsize=18</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>387</x><y>216</y><w>189</w><h>144</h></coordinates><panel_attributes>
+fontsize=22</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>660</x>
+      <y>380</y>
+      <w>210</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>
 30
 BM-ToF
 w3489ghuier
@@ -48,9 +181,56 @@ ultralyd
 13
 1
 
-fontsize=18</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>297</x><y>108</y><w>108</w><h>117</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;110;100;10</additional_attributes></element><element><id>Relation</id><coordinates><x>297</x><y>189</y><w>108</w><h>126</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;17;100;120</additional_attributes></element><element><id>Relation</id><coordinates><x>567</x><y>108</y><w>117</w><h>27</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;110;10</additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>666</x><y>63</y><w>162</w><h>108</h></coordinates><panel_attributes>
-2025-12-15T13:19
+fontsize=22</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>570</x>
+      <y>260</y>
+      <w>110</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;110.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>570</x>
+      <y>350</y>
+      <w>110</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;17.0;90.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>860</x>
+      <y>260</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>960</x>
+      <y>190</y>
+      <w>190</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>
 AA
+2025-12-15T13:19
 1400
 
-fontsize=18</panel_attributes><additional_attributes></additional_attributes></element></diagram>
+fontsize=22</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
