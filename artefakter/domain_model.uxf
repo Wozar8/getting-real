@@ -6,7 +6,7 @@ type
 nøgler
 sensorType
 batterierstatningsantal
-læggerPåLager
+erPåLager
 forbindelsestype
 
 fontsize=20</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>479</x><y>405</y><w>252</w><h>117</h></coordinates><panel_attributes>Batteri
