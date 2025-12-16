@@ -24,7 +24,7 @@ style=wordwrap</panel_attributes><additional_attributes></additional_attributes>
 fontsize=20
 style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>144</x><y>144</y><w>162</w><h>117</h></coordinates><panel_attributes>
 1
-Nanoconnect
+NanoConnect APS
 418
 
 fontsize=18</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>144</x><y>594</y><w>162</w><h>99</h></coordinates><panel_attributes>
